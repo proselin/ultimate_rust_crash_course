@@ -23,5 +23,26 @@ fn mainada() {
     } else {
         "seven"
     };
-    println!("{}", msg)
+    println!("{}", msg);
+
+    let fox = RedFox::new();
+    print!("{} and {}", fox.enemy, fox.life);
+    let life_left = fox.life;
+    fox.enemy = life_left;
+    fox.life = life_left;
+    
+}
+
+impl RedFox {
+    fn new() -> Self {
+        Self {
+            enemy: true,
+            life: 70
+        }
+    }
+}
+
+struct RedFox { 
+    enemy: bool,
+    life: u8
 }
